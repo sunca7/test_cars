@@ -6,7 +6,6 @@ import Filter from './Filter';
 class Home extends Component {
 
     inputDays = () => {
-        console.log('Hello')
     }
 
     render() {
@@ -17,9 +16,9 @@ class Home extends Component {
                     <span>Our cars</span>
                 </div>
                 <div className="filter">
-                    <Filter inputDays={this.props.inputDays} />
+                    <Filter inputDays={this.props.inputDays} duration={this.props.duration} distance={this.props.distance} handleSubmit={this.props.handleSubmit} />
                 </div>
-                <Cars cars={this.props.cars} days={this.props.days}/>
+                <Cars cars={this.props.cars}/>
             </div>
         )
     }

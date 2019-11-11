@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 class Cars extends Component {
 
   render() {
-    //console.log(this.props.cars);
     let carList = this.props.cars.map((car) => {
       return (<CarItem key={car.id} car={car} />)
     })

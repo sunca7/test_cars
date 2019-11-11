@@ -11,37 +11,42 @@ class App extends Component {
       duration: '',
       distance: ''
     };
+
+    this.inputDays = this.inputDays.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
   componentDidMount() {
-
-    if (this.state.duration)
-    {
-      console.log('hi')
-      fetch('/cars.json', { duration: this.state.duration})
+      fetch(`http://localhost:3001/cars.json`)
       .then(response => response.json())
       .then(data => this.setState({ cars: data }));
-    }
-    else {
-      fetch('/cars.json')
-      .then(response => response.json())
-      .then(data => this.setState({ cars: data }));
-    }
   }
   
-  inputDays = () => {
-    if (event.target.value >= 1 && event.target.value <= 30)
-    {
-      this.setState({duration: event.target.value});
-      console.log(this.state.duration)
-    }
+  inputDays = (event) => {
+  //  if (event.target.value >= 1 && event.target.value <= 30)
+  //  {
+      this.setState({[event.target.name]: event.target.value});
+  //  }
   }
+
+  handleSubmit = () => {
+    console.log('handle')
+    console.log(this.state.duration)
+    console.log(this.state.distance)
+    fetch(`http://localhost:3001/cars.json?duration=${this.state.duration}&distance=${this.state.distance}`)
+    .then(response => response.json())
+    .then(data => this.setState({ cars: data }));
+  };
 
   render() {
     return (
       <div className="App">
-        <Home cars={this.state.cars} inputDays={this.inputDays} days={this.state.duration}/>
+        <Home cars={this.state.cars} 
+              duration={this.state.duration}
+              distance={this.state.distance}
+              inputDays={this.inputDays}
+              handleSubmit={this.handleSubmit}/>
       </div>
     );
   }
