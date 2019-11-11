@@ -1,0 +1,76 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+ }
+
+#nav {
+    background-color: #fe5f55;
+    width: 100%;
+	float: left;
+	margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    list-style: none;
+}
+    
+#nav li {
+	float: left; }
+
+#nav li a {
+		display: block;
+		padding: 8px 15px;
+		text-decoration: none;
+		font-weight: bold;
+		color: white;
+		border-right: 1px solid #ccc; }
+
+#nav li a {
+		display: block;
+		padding: 8px 15px;
+		text-decoration: none;
+		font-weight: bold;
+		color: white;
+        border-right: 1px solid #ccc; }
+        
+.title {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: white;
+    background-color: #293462;
+    font-size: 6vw;
+    text-align: center;
+}
+
+.box{
+    padding-left: 15vw;
+    padding-right: 15vw;
+    padding-top: 10vh;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fff7f7;
+}
+
+.card{
+    margin-bottom: 1vw;
+    background-color:  #dadada;
+    padding: 1vw;
+    width: 13vw;
+    text-align: center;
+    font-size: 1vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img {
+    width: 12vw;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.filter-container {
+    align-content: center;
+}
