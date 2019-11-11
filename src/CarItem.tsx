@@ -10,20 +10,33 @@ class CarItem extends Component {
       <div className="card" key={id}>
         <div className="card-image">
           <img src={picturePath} alt={`${brand}'s picture`} />
-          <span className="card-title">{brand} {model}</span>
-        </div>
-
-        <div className="card-content">
+          <br/><br/>
+          <p>{brand} {model}</p>
           <p>Price per day : {pricePerDay} €</p>
           <p>Price per km : {pricePerKm} €</p>
 
           {(this.props.distance && this.props.duration) ? (
-            <p style={{ color: 'red' }}>Price Total : {pricePerKm * this.props.distance + pricePerDay * this.props.duration }€</p>
+            <p>Original Price : {pricePerKm * this.props.distance + this.props.duration * pricePerDay }€</p>
           ) : null}
+          {(this.props.distance && this.props.duration && this.props.duration > 1) ? (
+            <p style={{ color: 'red' }}>Discounted Price: {pricePerKm * this.props.distance + this.getPriceForDuration(this.props.duration, pricePerDay) }€</p>
+          ) : null}
+          <br/>
         </div>
-
       </div>
     );
+  }
+
+  getPriceForDuration = (duration, pricePerDay) => {
+    if (duration == 1) {
+      return duration * pricePerDay
+    } else if (duration <= 4) {
+      return duration * pricePerDay * 0.9
+    } else if (duration <= 10){
+      return duration * pricePerDay * 0.7
+    } else {
+      return duration * pricePerDay * 0.5
+    }
   }
 }
 
@@ -34,5 +47,6 @@ CarItem.propTypes = {
 const itemStyle = {
   backgroundColor: '#f4f4f4'
 }
+
 
 export default CarItem;

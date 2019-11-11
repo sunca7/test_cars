@@ -12,7 +12,7 @@ class App extends Component {
       distance: ''
     };
 
-    this.inputDays = this.inputDays.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,11 +23,8 @@ class App extends Component {
       .then(data => this.setState({ cars: data }));
   }
   
-  inputDays = (event) => {
-  //  if (event.target.value >= 1 && event.target.value <= 30)
-  //  {
+  handleChange = (event) => {
       this.setState({[event.target.name]: event.target.value});
-  //  }
   }
 
   handleSubmit = () => {
@@ -50,7 +47,7 @@ class App extends Component {
         <Home cars={this.state.cars} 
               duration={this.state.duration}
               distance={this.state.distance}
-              inputDays={this.inputDays}
+              handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}/>
       </div>
     );

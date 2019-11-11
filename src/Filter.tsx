@@ -3,21 +3,20 @@ import PropTypes from 'prop-types';
 
 class Filter extends Component {
 
-  inputDays = (e) => {
-  }
-
   render() {
     return (
       <div className="filter-container">
-        <form onSubmit={this.props.handleSubmit} >
+        <form class="filter-input" onSubmit={this.props.handleSubmit} >
           <label>
-            Days :
-          <input type="text" name="duration" value={this.props.duration} pattern="[0-9]*" onChange={this.props.inputDays} placeholder= " 1 ~ 30 days"/>
+            Days :  
+          <input type="number" id="duration" name="duration" min="1" max="30" value={this.props.duration} pattern="[0-9]*" onChange={this.props.handleChange} placeholder= " 1 ~ 30 days"/>
           </label>
+          {'  '}
           <label>
-            km :
-          <input type="text" name="distance" value={this.props.distance} pattern="[0-9]*" onChange={this.props.inputDays}  placeholder= " 50, 100, 150, ... 3000"/>
+            Km :  
+          <input type="number" id="distance" name="distance" min="50" max="3000" step="50" value={this.props.distance} pattern="[0-9]*" onChange={this.props.handleChange}  placeholder= " 50, 100, 150, ... 3000"/>
           </label>
+          <br/><br/>
           <input type="submit" value="Submit" />
         </form>
       </div>

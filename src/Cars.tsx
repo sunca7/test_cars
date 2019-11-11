@@ -10,7 +10,7 @@ class Cars extends Component {
     })
 
     return (
-      <div className="container">
+      <div className="car-container">
         <div className="box">
           {carList}
         </div>

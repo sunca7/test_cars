@@ -4,6 +4,11 @@
     font-family: 'Poppins', sans-serif;
  }
 
+ .container {
+     width: 100%;
+     display: inline-block;
+ }
+
 #nav {
     background-color: #fe5f55;
     width: 100%;
@@ -18,20 +23,20 @@
 	float: left; }
 
 #nav li a {
-		display: block;
-		padding: 8px 15px;
-		text-decoration: none;
-		font-weight: bold;
-		color: white;
-		border-right: 1px solid #ccc; }
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+	border-right: 1px solid #ccc; }
 
 #nav li a {
-		display: block;
-		padding: 8px 15px;
-		text-decoration: none;
-		font-weight: bold;
-		color: white;
-        border-right: 1px solid #ccc; }
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: white;
+    border-right: 1px solid #ccc; }
         
 .title {
     margin: 0;
@@ -43,32 +48,66 @@
     text-align: center;
 }
 
+#duration {
+    width: 10vw;
+}
+
+#distance {
+    width: 15vw;
+}
+
+.filter-box {
+    padding-top: 2vw;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    background: #fff7f7;
+}
+
+.car-container {
+    background: #fff7f7;
+}
+
 .box{
-    padding-left: 15vw;
-    padding-right: 15vw;
-    padding-top: 10vh;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-gap: 2vw;
+    padding-top: 30px;
     background-color: #fff7f7;
 }
 
 .card{
-    margin-bottom: 1vw;
+    border-radius: 15px;
+    width: 100%;
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color:  #dadada;
-    padding: 1vw;
-    width: 13vw;
     text-align: center;
-    font-size: 1vw;
+    font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-img {
-    width: 12vw;
+@media (min-width: 300px) {
+    .box { grid-template-columns: repeat(1, 1fr); }
 }
 
-.card-title {
-    text-align: center;
+@media (min-width: 500px) {
+    .box { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 700px) {
+    .box { grid-template-columns: repeat(3, 1fr); }
+}
+
+img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    height: auto;
 }
 
 .filter-container {
