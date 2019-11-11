@@ -6,7 +6,7 @@ class Cars extends Component {
 
   render() {
     let carList = this.props.cars.map((car) => {
-      return (<CarItem key={car.id} car={car} />)
+      return (<CarItem key={car.id} car={car} duration={this.props.duration} distance={this.props.distance}/>)
     })
 
     return (

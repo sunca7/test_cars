@@ -18,7 +18,7 @@ class Home extends Component {
                 <div className="filter">
                     <Filter inputDays={this.props.inputDays} duration={this.props.duration} distance={this.props.distance} handleSubmit={this.props.handleSubmit} />
                 </div>
-                <Cars cars={this.props.cars}/>
+                <Cars cars={this.props.cars} duration={this.props.duration} distance={this.props.distance}/>
             </div>
         )
     }

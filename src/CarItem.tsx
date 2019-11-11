@@ -2,33 +2,37 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class CarItem extends Component {
-  
+
   render() {
-    const {id, brand, model, picturePath, pricePerDay, pricePerKm} = this.props.car;
+    const { id, brand, model, picturePath, pricePerDay, pricePerKm } = this.props.car;
 
     return (
-        <div className="card" key={id}>
-          <div className="card-image">
-             <img src={picturePath} alt={`${brand}'s picture`}/>
-             <span className="card-title">{brand} {model}</span>
-          </div>
-
-          <div className="card-content">
-            <p>Price per day : {pricePerDay} €</p>
-            <p>Price per km : {pricePerKm} €</p>
-          </div>
-      
+      <div className="card" key={id}>
+        <div className="card-image">
+          <img src={picturePath} alt={`${brand}'s picture`} />
+          <span className="card-title">{brand} {model}</span>
         </div>
+
+        <div className="card-content">
+          <p>Price per day : {pricePerDay} €</p>
+          <p>Price per km : {pricePerKm} €</p>
+
+          {(this.props.distance && this.props.duration) ? (
+            <p style={{ color: 'red' }}>Price Total : {pricePerKm * this.props.distance + pricePerDay * this.props.duration }€</p>
+          ) : null}
+        </div>
+
+      </div>
     );
   }
 }
 
 CarItem.propTypes = {
-    car: PropTypes.object.isRequired
-  }
+  car: PropTypes.object.isRequired
+}
 
 const itemStyle = {
-    backgroundColor: '#f4f4f4'
+  backgroundColor: '#f4f4f4'
 }
 
 export default CarItem;

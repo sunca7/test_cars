@@ -31,12 +31,17 @@ class App extends Component {
   }
 
   handleSubmit = () => {
-    console.log('handle')
-    console.log(this.state.duration)
-    console.log(this.state.distance)
-    fetch(`http://localhost:3001/cars.json?duration=${this.state.duration}&distance=${this.state.distance}`)
-    .then(response => response.json())
-    .then(data => this.setState({ cars: data }));
+    if (this.state.duration && this.state.distance)
+    {
+      fetch(`http://localhost:3001/cars.json?duration=${this.state.duration}&distance=${this.state.distance}`)
+        .then(response => response.json())
+        .then(data => this.setState({ cars: data }));
+    }
+    else {
+      alert('Please fill the days and km infos');
+      event.preventDefault();
+    }
+    
   };
 
   render() {
