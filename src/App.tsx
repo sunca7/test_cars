@@ -33,6 +33,7 @@ class App extends Component {
       fetch(`http://localhost:3001/cars.json?duration=${this.state.duration}&distance=${this.state.distance}`)
         .then(response => response.json())
         .then(data => this.setState({ cars: data }));
+      event.preventDefault();
     }
     else {
       alert('Please fill the days and km infos');
