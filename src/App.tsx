@@ -27,12 +27,13 @@ class App extends Component {
       this.setState({[event.target.name]: event.target.value});
   }
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
     if (this.state.duration && this.state.distance)
     {
       fetch(`http://localhost:3001/cars.json?duration=${this.state.duration}&distance=${this.state.distance}`)
         .then(response => response.json())
         .then(data => this.setState({ cars: data }));
+      event.preventDefault();
     }
     else {
       alert('Please fill the days and km infos');

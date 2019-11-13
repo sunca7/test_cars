@@ -6,7 +6,7 @@ class Filter extends Component {
   render() {
     return (
       <div className="filter-container">
-        <form class="filter-input" onSubmit={this.props.handleSubmit} >
+        <form className="filter-input" onSubmit={this.props.handleSubmit} >
           <label>
             Days :  
           <input type="number" id="duration" name="duration" min="1" max="30" value={this.props.duration} pattern="[0-9]*" onChange={this.props.handleChange} placeholder= " 1 ~ 30 days"/>
