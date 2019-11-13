@@ -44,9 +44,4 @@ CarItem.propTypes = {
   car: PropTypes.object.isRequired
 }
 
-const itemStyle = {
-  backgroundColor: '#f4f4f4'
-}
-
-
 export default CarItem;
